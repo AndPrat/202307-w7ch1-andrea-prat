@@ -9,7 +9,7 @@
     "build": "tsc",
     "build:dev": "tsc -w",
     "start": "node .",
-    "start:dev": "node --watch"
+    "start:dev": "node . --watch"
   },
   "keywords": [],
   "author": "",
