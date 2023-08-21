@@ -1,4 +1,4 @@
-import app from ".";
+import app from "./index.js";
 
 const startServer = (port: number) => {
   app.listen(port, () => {
