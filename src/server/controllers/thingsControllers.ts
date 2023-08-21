@@ -7,4 +7,13 @@ const getThings = (_req: Request, res: Response) => {
   res.status(200).json({ things });
 };
 
-export default getThings;
+const getThingById = (req: Request, res: Response) => {
+  const { idThing } = req.params;
+  const getThingToId = things.find((thing) => thing.id === Number(idThing));
+
+  console.log("A request has arrived with a Get method to /things/idThing");
+
+  res.status(200).json({ getThingToId });
+};
+
+export { getThingById, getThings };
