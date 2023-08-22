@@ -7,4 +7,4 @@ if (!port) {
   process.exit(1);
 }
 
-startServer(Number(port));
+startServer(+port);
