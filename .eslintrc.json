@@ -26,5 +26,14 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "rules": {}
+  "rules": {
+    "new-cap": [
+      "error",
+      {
+        "capIsNewExceptions": ["Router"]
+      }
+    ],
+    "no-implicit-coercion": "off",
+    "no-console": "error"
+  }
 }

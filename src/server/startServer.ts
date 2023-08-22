@@ -1,8 +1,11 @@
+import debugCreator from "debug";
 import app from "./index.js";
+
+const debug = debugCreator("things:server:start");
 
 const startServer = (port: number) => {
   app.listen(port, () => {
-    console.log(`Listening on http://localhost:${port}`);
+    debug(`Listening on http://localhost:${port}`);
   });
 };
 
