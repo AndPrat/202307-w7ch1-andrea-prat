@@ -1,5 +1,5 @@
-import chalk from "chalk/index.js";
-import { debug } from "debug";
+import chalk from "chalk";
+import debug from "debug";
 import "dotenv/config";
 import connectToDatabase from "./database/connectToDatabase.js";
 import startServer from "./server/startServer.js";

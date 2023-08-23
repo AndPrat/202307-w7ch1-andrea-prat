@@ -42,7 +42,7 @@ describe("Given getThingById controller", () => {
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test.only("Then it should call its method json with 'React' and 'Create reactive elements'", () => {
+    test("Then it should call its method json with 'React' and 'Create reactive elements'", () => {
       const { idThing } = req.params;
       const getThingToId = things.find((thing) => thing.id === +idThing);
 
