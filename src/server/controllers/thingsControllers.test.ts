@@ -1,5 +1,5 @@
 import { type NextFunction, type Response } from "express";
-import { things } from "../../data/data.js";
+import { things } from "../../database/data.js";
 import type ParamIdRequest from "../../types.js";
 import { getThingById, getThings } from "./thingsControllers.js";
 
@@ -18,11 +18,12 @@ describe("Given thingsControllers controller", () => {
   describe("When it receives a response", () => {
     test("Then it should call its method status with 200", () => {
       getThings(req as ParamIdRequest, res as Response);
+
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
   });
 
-  test("Then it shold call its method json with 'React', 'Git Graph', 'Netlify', 'Typescript', 'Testing'", () => {
+  test("Then it should call its method json with 'React', 'Git Graph', 'Netlify', 'Typescript', 'Testing'", () => {
     getThings(req as ParamIdRequest, res as Response);
 
     expect(res.json).toHaveBeenCalledWith({ things });
@@ -41,7 +42,7 @@ describe("Given getThingById controller", () => {
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test.only("Then it shold call its method json with 'React' and 'Create reactive elements'", () => {
+    test.only("Then it should call its method json with 'React' and 'Create reactive elements'", () => {
       const { idThing } = req.params;
       const getThingToId = things.find((thing) => thing.id === +idThing);
 
