@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from "express";
 import CustomError from "../../CustomError/CustomError.js";
-import { things } from "../../data/data.js";
+import { things } from "../../database/data.js";
 import type ParamIdRequest from "../../types.js";
 
 const getThings = (_req: Request, res: Response) => {

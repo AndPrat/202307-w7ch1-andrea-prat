@@ -10,21 +10,19 @@
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "no-unused-vars": "error",
-        "@typescript-eslint/consistent-type-definitions": [
-          "error",
-          "interface"
-        ],
-        "new-cap": [
-          "error",
-          {
-            "capIsNewExceptions": ["Router"]
-          }
-        ]
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
+      }
+    },
+    {
+      "files": ["**/models//*.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": ["off"]
       }
     }
   ],
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "rules": {
     "new-cap": [
