@@ -1,5 +1,5 @@
 interface ThingStructure {
-  id: number;
+  id: string;
   name: string;
   situation: string;
 }

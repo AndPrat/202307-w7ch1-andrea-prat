@@ -5,9 +5,9 @@ import Thing from "../../database/models/Things.js";
 import type ParamIdRequest from "../../types.js";
 
 const getThings = async (req: Request, res: Response) => {
-  const thingsDb = await Thing.find().exec();
+  const things = await Thing.find().exec();
 
-  res.status(200).json({ thingsDb });
+  res.status(200).json({ things });
 };
 
 const getThingById = (
