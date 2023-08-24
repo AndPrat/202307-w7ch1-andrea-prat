@@ -10,20 +10,23 @@ const getThings = async (req: Request, res: Response) => {
   res.status(200).json({ things });
 };
 
-const getThingById = (
+const getThingById = async (
   req: ParamIdRequest,
   res: Response,
   next: NextFunction,
 ) => {
   const { idThing } = req.params;
-  const getThingToId = things.find((thing) => thing.id === +idThing);
+  const thing = await Thing.find(
+    (thing: { id: number }) => thing.id === +idThing,
+  ).exec();
 
   if (!res.status(200)) {
     next(new CustomError("Endpoint not found", 404));
+
     return;
   }
 
-  res.status(200).json({ getThingToId });
+  res.status(200).json({ thing });
 };
 
 const deleteThingById = (req: Request, res: Response) => {
