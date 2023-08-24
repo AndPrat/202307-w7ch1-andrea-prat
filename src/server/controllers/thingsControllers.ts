@@ -1,9 +1,12 @@
 import { type NextFunction, type Request, type Response } from "express";
 import CustomError from "../../CustomError/CustomError.js";
 import { things } from "../../database/data.js";
+import Thing from "../../database/models/Things.js";
 import type ParamIdRequest from "../../types.js";
 
-const getThings = (_req: Request, res: Response) => {
+const getThings = async (req: Request, res: Response) => {
+  const things = await Thing.find().exec();
+
   res.status(200).json({ things });
 };
 
